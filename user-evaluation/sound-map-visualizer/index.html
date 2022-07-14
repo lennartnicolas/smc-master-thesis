@@ -1,0 +1,139 @@
+<html>
+<head>
+   <meta charset="UTF-8"> 
+  <title>Sound Map Visualizer</title>
+  <link rel="stylesheet" type="text/css" href="all.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,500' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <canvas></canvas>
+
+  <div id="query_box" class="box">
+    <form id="query-form" class="query-form">
+      <input type="radio" id="t1m1" name="fav_language" value="sound_map_dict_refined_nolabels_t1.json">
+      <label for="map_refined">M1.1</label>
+      <input type="radio" id="t1m2" name="fav_language" value="sound_map_dict_unrefined_nolabels_t1.json">
+      <label for="map_unrefined">M1.2</label>
+      <input type="radio" id="t1m3" name="fav_language" value="sound_map_dict_refined_t1.json">
+      <label for="map_refined_task_2">M1.3</label>
+      <input type="radio" id="t1m4" name="fav_language" value="sound_map_dict_unrefined_t1.json">
+      <label for="map_unrefined_task_2">M1.4</label><br>
+      <input type="radio" id="t2m1" name="fav_language" value="sound_map_dict_refined_nolabels_t2.json">
+      <label for="map_refined">M2.1</label>
+      <input type="radio" id="t2m2" name="fav_language" value="sound_map_dict_unrefined_nolabels_t2.json">
+      <label for="map_unrefined">M2.2</label>
+      <input type="radio" id="t2m3" name="fav_language" value="sound_map_dict_refined_t2.json">
+      <label for="map_refined_task_2">M2.3</label>
+      <input type="radio" id="t2m4" name="fav_language" value="sound_map_dict_unrefined_t2.json">
+      <label for="map_unrefined_task_2">M2.4</label><br>
+      <input type="submit" id="go_button" value="Plot">
+    </form>
+    <div id="info_placeholder"></div>
+  </div>
+
+  
+  <div id="audiodiv1" class="box">
+    <p>Playback target sound:</p>
+    <audio controls src="https://cdn.freesound.org/previews/145/145450_2615119-lq.mp3" id="audiobox" class="audiobox">
+  </div>
+  
+  <div id="audiodiv2" class="box">
+    <p>Playback target sound:</p>
+    <audio controls src="https://cdn.freesound.org/previews/410/410367_1196020-lq.mp3" id="audiobox" class="audiobox">
+    </audio>
+  </div>
+
+  <div id="audiodiv3" class="box">
+    <p>Playback target sound:</p>
+    <audio controls src="https://cdn.freesound.org/previews/164/164341_2979316-lq.mp3" id="audiobox" class="audiobox">
+    </audio>
+  </div>
+
+  <div id="audiodiv4" class="box">
+    <p>Playback target sound:</p>
+    <audio controls src="https://cdn.freesound.org/previews/412/412057_8045655-lq.mp3" id="audiobox" class="audiobox">
+    </audio>
+  </div>
+
+  <div id="audiodiv_multi1" class="box">
+    <p style="margin-bottom: 5px;">Select and play target sound:</p>
+    <input type="radio" id="sound1" onclick="checkRadio('https://cdn.freesound.org/previews/392/392378_1730553-lq.mp3', 'audiobox_multi1')" name="num1">
+    <label for="sound1">1</label>
+    <input type="radio" id="sound2" onclick="checkRadio('https://cdn.freesound.org/previews/1/1907_1198-lq.mp3', 'audiobox_multi1')" name="num1">
+    <label for="sound2">2</label>
+    <input type="radio" id="sound3" onclick="checkRadio('https://cdn.freesound.org/previews/148/148905_2578041-lq.mp3', 'audiobox_multi1')" name="num1">
+    <label for="sound3">3</label><br'
+    </ul>
+    <audio controls id="audiobox_multi1" class="audiobox_multi">
+    </audio>
+  </div>
+
+  <div id="audiodiv_multi2" class="box">
+    <p style="margin-bottom: 5px;">Select and play target sound:</p>
+    <input type="radio" id="sound12" onclick="checkRadio('https://cdn.freesound.org/previews/276/276869_4610930-lq.mp3', 'audiobox_multi2')" name="fav_language">
+    <label for="sound12">1</label>
+    <input type="radio" id="sound2" onclick="checkRadio('https://cdn.freesound.org/previews/346/346173_6146418-lq.mp3', 'audiobox_multi2')" name="fav_language">
+    <label for="sound22">2</label>
+    <input type="radio" id="sound32" onclick="checkRadio('https://cdn.freesound.org/previews/256/256093_4759914-lq.mp3', 'audiobox_multi2')" name="fav_language">
+    <label for="sound32">3</label><br>
+    </ul>
+    <audio controls id="audiobox_multi2" class="audiobox_multi">
+    </audio>
+  </div>
+
+  <div id="audiodiv_multi3" class="box">
+    <p style="margin-bottom: 5px;">Select and play target sound:</p>
+    <input type="radio" id="sound13" onclick="checkRadio('https://cdn.freesound.org/previews/172/172550_49369-lq.mp3', 'audiobox_multi3')" name="fav_language">
+    <label for="sound13">1</label>
+    <input type="radio" id="sound23" onclick="checkRadio('https://cdn.freesound.org/previews/107/107055_1428489-lq.mp3', 'audiobox_multi3')" name="fav_language">
+    <label for="sound23">2</label>
+    <input type="radio" id="sound33" onclick="checkRadio('https://cdn.freesound.org/previews/351/351418_6165769-lq.mp3', 'audiobox_multi3')" name="fav_language">
+    <label for="sound33">3</label><br>
+    </ul>
+    <audio controls id="audiobox_multi3" class="audiobox_multi">
+    </audio>
+  </div>
+
+  <div id="audiodiv_multi4" class="box">
+    <p style="margin-bottom: 5px;">Select and play target sound:</p>
+    <input type="radio" id="sound14" onclick="checkRadio('https://cdn.freesound.org/previews/207/207119_2568776-lq.mp3', 'audiobox_multi4')" name="fav_language">
+    <label for="sound14">1</label>
+    <input type="radio" id="sound24" onclick="checkRadio('https://cdn.freesound.org/previews/377/377083_3728489-lq.mp3', 'audiobox_multi4')" name="fav_language">
+    <label for="sound24">2</label>
+    <input type="radio" id="sound34" onclick="checkRadio('https://cdn.freesound.org/previews/203/203770_3706663-lq.mp3', 'audiobox_multi4')" name="fav_language">
+    <label for="sound34">3</label><br>
+    </ul>
+    <audio controls id="audiobox_multi4" class="audiobox_multi">
+    </audio>
+  </div>
+  
+
+  <div id="instructions_box" class="box">
+    Click on points to listen to sounds<br>
+    Press alt key and move mouse to play on hover<br>
+    Click + drag to navigate the map (press "cmd" to zoom)<br>
+    Press spacebar to stop playback<br>
+  </div>
+
+  <div id="sound_info_box" class="box">
+  </div>
+  
+  
+  <!-- javascript loading must be at the end -->
+  <script>
+    function checkRadio(s, audiobox) {
+      var audio = document.getElementById(audiobox);
+      audio.src = s;
+      audio.load();
+    }
+  </script>
+
+
+  <script src="inputevents.js"></script>
+  <script src="audioengine.js"></script>
+  <script src="tsne.js"></script>
+  <script src="utils.js"></script>
+  <script src="all.js"></script>
+
+</body>
+</html>
