@@ -1,7 +1,7 @@
 ### A comparative study on improving sound similarity maps with semantic metadata
 
 This repository contains all data relating to the master thesis on sound similarity maps conducted at University Pompeu Fabra, Barcelona.
-The paper is accessible [here]([www.google.com](https://zenodo.org/record/7116193#.YzL98uxByEs)).
+The paper is accessible [here]([https://zenodo.org/record/7116193#.YzL98uxByEs]).
 
 Further you can checkout the interface of the similarity maps on [GitHub Pages](https://lennartnicolas.github.io/smc-master-thesis/).
 
